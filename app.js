@@ -24,9 +24,10 @@ const helmet = require("helmet");
 const sessions = require("express-session");
 const MongoStore = require("connect-mongo");
 
-// const AtlastDB = process.env.ATLAST_DB_URL;
-const DBLOCAL = "mongodb://localhost:27017/YelpCampDatabase";
-mongoose.connect(DBLOCAL);
+const AtlastDB =
+  process.env.ATLAST_DB_URL || "mongodb://localhost:27017/YelpCampDatabase";
+// const DBLOCAL = "mongodb://localhost:27017/YelpCampDatabase";
+mongoose.connect(AtlastDB);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
@@ -44,7 +45,7 @@ app.use(mongoSanitize());
 app.use(helmet());
 
 const store = MongoStore.create({
-  mongoUrl: DBLOCAL,
+  mongoUrl: AtlastDB,
   crypto: {
     secret: "thisshouldbesecret",
   },
