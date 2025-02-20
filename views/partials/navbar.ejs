@@ -1,6 +1,8 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Campgrounds</a>
+    <!-- Campgrounds on the left -->
+    <a class="navbar-brand me-auto" href="/">Campgrounds</a>
+
     <button
       class="navbar-toggler"
       type="button"
@@ -12,20 +14,29 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
+
+    <div
+      class="collapse navbar-collapse justify-content-center"
+      id="navbarNavAltMarkup"
+    >
+      <!-- Centered Navigation Links with Gap -->
+      <div class="navbar-nav d-flex gap-3">
         <a class="nav-link" href="/">Home</a>
+        <% if(currentUser) { %>
         <a class="nav-link" href="/campgrounds">All Camps</a>
         <a class="nav-link" href="/campgrounds/new">Add Camps</a>
-      </div>
-      <div class="navbar-nav ml-auto">
-        <% if(!currentUser) { %>
-        <a class="nav-link" href="/login">Login</a>
-        <a class="nav-link" href="/register">Register</a>
-        <% } else { %>
-        <a class="nav-link" href="/logout">Logout</a>
         <% } %>
       </div>
+    </div>
+
+    <!-- Login/Register on the right -->
+    <div class="navbar-nav ms-auto">
+      <% if (!currentUser) { %>
+      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/register">Register</a>
+      <% } else { %>
+      <a class="nav-link" href="/logout">Logout</a>
+      <% } %>
     </div>
   </div>
 </nav>

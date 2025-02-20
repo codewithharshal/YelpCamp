@@ -31,7 +31,6 @@ module.exports.createCamp = async (req, res, next) => {
   }));
   campground.author = req.user._id;
   await campground.save();
-  console.log(campground);
 
   req.flash("success", "Successfully created new camp");
   res.redirect(`/campgrounds/${campground._id}`);
@@ -97,6 +96,6 @@ module.exports.updateCamps = async (req, res) => {
 module.exports.deleteCamp = async (req, res) => {
   const { id } = req.params;
   await Campground.findByIdAndDelete(id);
-  req.flash("success", "Successfully Camp delted");
+  req.flash("success", "Successfully Camp deleted");
   res.redirect("/campgrounds");
 };

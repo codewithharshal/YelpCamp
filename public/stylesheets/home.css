@@ -1,0 +1,31 @@
+.about-content {
+  background: rgba(255, 255, 255, 0.8); /* Light transparent background */
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.about-content:hover {
+  transform: translateY(-5px);
+}
+
+.about-content h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+.about-content .btn {
+  font-size: 1rem;
+  padding: 10px 20px;
+}
+
+.feature-img {
+  width: 100px; /* Set fixed width */
+  height: 100px; /* Set fixed height */
+  object-fit: cover; /* Ensures the image fills the box without distortion */
+  border-radius: 10px; /* Optional: Adds rounded corners for a modern look */
+}
