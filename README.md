@@ -8,9 +8,7 @@ YelpCamp is a full-stack web application that allows users to discover, create, 
 
 ## **Live Demo**
 
-[View Live](https://your-demo-link.com)
-
-![Screenshot](assets/screenshot.png)
+[View Live](https://yelpcamp-tae8.onrender.com)
 
 ---
 
